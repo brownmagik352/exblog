@@ -1,0 +1,14 @@
+<h1>My Blog</h1>
+
+<% @posts.each do |post| %>
+  <h2 class="post-title"><%= link_to(post.title, post) %></h2>
+    <div class="timestamp">
+      posted on <%= post.created_at %>
+    </div>
+    <div class="post-context">
+      <%= post.context %>
+    </div>
+<% end %>
+
+<br /><br />
+<%= link_to "new post", new_post_path %>
